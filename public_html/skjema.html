@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel='stylesheet' type='text/css' href='style.css'/>
+        <script type="text/javascript" src="validering.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="headerlogo">
+            <div id="header">
+                <a href="hjem.html"><img src=logo.jpg alt="logo"></a>
+            </div>
+        </div>
+        <div id='meny'>
+           <div class="logo"><a href="https://accounts.google.com/ServiceLogin?hl=no&service=youtube&uilel=3&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fhl%3Dno%26next%3D%252F%26feature%3Dsign_in_button%26app%3Ddesktop%26action_handle_signin%3Dtrue&passive=true#identifier"><img src="http://www.bridge2food.com/images/youtube.png"></a></div>
+            <div class="logo"><a href="https://twitter.com/login?lang=no"><img src="http://cdn.business2community.com/wp-content/uploads/2015/07/Twitter-icon.png.png"></a></div>
+            <div class="logo"><a href="https://www.facebook.com/login/"><img src="https://www.facebook.com/images/fb_icon_325x325.png"></a></div>
+            <div class="searchbar">
+                <form method="get" action="http://www.google.com/search">
+                    <input type="text" name="q" id="q" value="Søk på Google" class="txtfield" onBlur="javascript:if(this.value==''){this.value=this.defaultValue;}" onFocus="javascript:if(this.value==this.defaultValue){this.value='';}">
+                    <input type="submit" value="Søk" class="btn">
+                </form>
+            </div>
+            <div id='nav'>
+                <ul>
+                    <li><a href="hjem.html" class="menyfix">Hjem</a></li>
+                    <li>
+                        <a href="tjenester.html" class="menyfix">Tjenester</a>
+                    <ul>
+                        <li><a href="webdesign.html">Webdesign</a></li>
+                        <li><a href="logodesign.html">Logo desgin</a></li>
+                        <li><a href="grafiskdesign.html">Grafisk desgin</a></li>
+                    </ul>
+                    </li>
+                    <li>
+                    <a href="pensum.html" class="menyfix">Pensum</a>
+                    <ul>
+                        <li><a href="pensum1.html">Pensum 1</a></li>
+                        <li><a href="pensum2.html">Pensum 2</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="designvalg.html" class="menyfix">Designvalg</a></li>
+                    <li><a href="kontakt.html" class="menyfix">Kontakt oss</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <article class="topcontent">
+            <header>
+                <h2>Tilbud på tjenester</h2>
+            </header>
+            <form action="" method="post" onsubmit="return validerAlle();">
+            <table border="0">
+            <tr>
+                <td>Navn:<br/></td>
+                <td><input id="navn" type="text" name="navn" required onchange="validerNavn();"/><br/></td>
+                <td id="feilNavn"></td>
+            </tr>
+            <tr>
+                <td>Telefonnummer:<br/></td>
+                <td><input id="telefonnummer" type="text" name="navn" required onchange="validerTelefonnummer();"/><br/></td>
+                <td id="feilTelefonnummer"></td>
+            </tr>
+            <tr>
+                <td>E-postadresse:<br/></td>
+                <td><input type="text" name="epost" required onchange="validerEpost();"/><br/></td>
+                <td id="feilEpost"></td>
+            </tr>
+            <tr>
+                <td>Firma:<br/></td>
+                <td><input type="text" name="firma" onchange="validerFirma();"/><br/></td>
+                <td id="feilFirma"></td>
+            </tr>
+            <tr>
+                <td>Melding:</td>
+                <td><textarea name="melding" rows="5" cols="40"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="knapp" value="Send"/></td>
+            </tr>
+            </table>
+            </form>
+        </article>
+        
+        <?php
+        if(isset($_POST["knapp"]))
+        {
+        echo "Registering er klart!";
+        }
+        ?>
+        
+    <footer class="footer">
+        <p>Galaxy design av Zain Butt</p>
+    </footer>
+    </body>
+</html>
